@@ -18,29 +18,36 @@ export default function Home() {
       </Head>
 
       <main className='flex items-center bg-light dark:bg-dark dark:border-dark dark:text-light w-full min-h-screen'>
-        <Layout className='mx-5'>
+        <Layout className='pt-0  md:pt-16 sm:pt-8'>
 
-          <div className="flex items-center justify-center w-full h-60 mx-30">
-            <div className='w-1/2 flex flex-col items-center self-center mx-20'>
+          <div className="flex items-center justify-center w-full lg:flex-col">
+            <div className='w-1/2 flex flex-col items-center self-center mx-20 lg:w-full lg:text-center'>
               <AnimatedText 
-              text="Welcome to my portfolio!" 
-              className='!text-6xl !text-left'/>
+              text="Hello and Welcome to my portfolio!" 
+              className='!text-6xl !text-left xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl '/>
               
-              <p className='my-4 text-xl font-medium pr-5'>
+              <p className='my-4 text-xl font-medium pr-5 md:text-lg sm:text-md xs:text-sm'>
                 My name is Kevin Gao and I am a passionate university graduate who is eager to contribute to a software engineering environment. 
-                <br></br>
-                <br></br>
                 Feel free to explore my portfolio and check out my resume. 
                 <br></br>
                 <br></br>
-                If you're curious of the pictures on the portfolio were made using a Stable Diffusion Image Generation Model!
+                If you're curious of the pictures on the portfolio were made using a Stable Diffusion image generation model!
               </p>
               
-              <div className='flex items-center self-start mt-2'>
+              <div className='flex items-center self-start mt-2 lg:self-center'>
                 <Link 
-                  href="/GeneralResume.pdf" 
+                  href="/KGaoResume2023.pdf" 
                   target={"_blank"} 
-                  className="flex items-center bg-dark text-light dark:bg-light dark:text-dark p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark dark:hover:bg-dark dark:hover:text-light border-2 border-solid border-transpartent hover:border-dark dark:hover:border-light"
+                  className="flex items-center
+                  p-2.5 px-6 rounded-lg text-lg font-semibold 
+                  border-2 border-solid border-transpartent 
+                  hover:border-dark dark:hover:border-light
+                  bg-dark text-light dark:bg-light dark:text-dark 
+                  hover:bg-light hover:text-dark dark:hover:bg-dark dark:hover:text-light 
+                  md:p-2 md:px-4 md:text-base
+                  sm:p-1 sm:px-2 sm:text-base
+                  
+                  "
                   download={true}>
                   Resume
                   <LinkArrow className={"w-6 ml-1"}/>
@@ -49,15 +56,17 @@ export default function Home() {
               </div>
             </div>
 
-            <div className='w=full items-center'>
+            <div className='pt-10 w-1/2 md:w=full items-center'>
               <Image 
               src={dev0} 
               alt="main portfolio picture" 
-              className='w-full h-auto rounded-full' />
+              className='w-full h-auto rounded-full lg:hidden md:inline-block md:w-full'
+              priority 
+              sizes= "(max-width:768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
             </div>
           </div>
 
-          <HireMe/>
+          <HireMe />
 
         </Layout>
       </main>

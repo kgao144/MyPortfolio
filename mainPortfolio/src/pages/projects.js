@@ -4,11 +4,14 @@ import Layout from '@/components/Layout'
 import AnimatedText from '@/components/AnimatedText'
 import Link from 'next/link'
 import Image from 'next/image'
-import { GithubIcon, FramerMotionIcon, NextJSIcon, TailwindIcon} from '@/components/Icons'
+import {motion} from 'framer-motion'
+import { GithubIcon, FramerMotionIcon, NextJSIcon, TailwindIcon, GlowGithub} from '@/components/Icons'
 import portfolio from '../../public/images/projects/portfoliomain.png'
 import eliza from '../../public/images/projects/eliza.png'
 import placeholder from '../../public/images/projects/placeholder.png'
 import ueplane from '../../public/images/projects/ueplane.png'
+
+const FramerImage = motion(Image);
 
 const FeaturedProject = ({type, title, summary, img, link, github}) => {
     return (
@@ -17,10 +20,14 @@ const FeaturedProject = ({type, title, summary, img, link, github}) => {
             <div className='absolute top-0 -right-3 -z-10 w-[100%] h-[104%] rounded-[2.5rem] bg-dark dark:bg-light rounded-br-3xl'/>
 
             <Link href={link} target="_blank" className='w-full h-full cursor-pointer overflow-hidden rounded-3xl '>
-                <Image 
+                <FramerImage 
                 src={img} 
                 alt={title} 
-                className='w-full h-auto rounded-3xl p-2'/>
+                className='w-full h-auto rounded-3xl p-2'
+                whileHover={{scale:1.05}}
+                transition={{duration:0.2}}
+                priority
+                sizes= "(max-width:768px) 100vw, (max-width: 1200px) 50vw, 50vw"/>
             </Link>
 
             <div className='w-1/2 flex flex-col items-start justify-between pl-6 py-3'>
@@ -32,9 +39,14 @@ const FeaturedProject = ({type, title, summary, img, link, github}) => {
                 <p className='my-2 mr-6 font-large text-xl text-dark dark:text-light'>{summary}</p>
                 
                 <div className='flex items-center mt-5 pt-1'>
-                    <Link href={github} target="_blank" className='dark:text-light'>
-                        <GithubIcon />
-                    </Link>
+                    <motion.div
+                    whileHover = {{y:-6}}
+                    >
+                        <Link href={github} target="_blank" className=' dark:bg-light rounded-full dark:text-light'>
+                            <GlowGithub />
+                        </Link>
+                    </motion.div>
+                    
                     <Link href={link} target="_blank" className='ml-4 rounded-lg bg-dark text-light dark:bg-light dark:text-dark border border-solid border-dark hover:bg-light hover:text-dark dark:hover:border-light dark:hover:bg-dark dark:hover:text-light p-2 px-6 text-lg font-semibold'>
                         Visit the Project!
                     </Link>
@@ -51,10 +63,14 @@ const Project = ({type, title, img, link, github}) => {
             <div className='absolute top-0 -right-3 -z-10 w-[99%] h-[103%] rounded-[2rem] bg-dark dark:bg-light rounded-br-3xl'/>
 
             <Link href={link} target="_blank" className='w-full h-[75%] cursor-pointer overflow-hidden rounded-3xl'>
-                <Image 
+                <FramerImage 
                 src={img} 
                 alt={title} 
-                className='w-full h-auto rounded-3xl p-2 '/>
+                className='w-full h-auto rounded-3xl p-2 '
+                whileHover={{scale:1.05}}
+                transition={{duration:0.2}}
+                priority
+                sizes= "(max-width:768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
             </Link>
 
             <div className='w-full flex flex-col items-start justify-between mt-4'>

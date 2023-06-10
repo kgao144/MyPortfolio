@@ -52,7 +52,9 @@ const about = () => {
                         <Image 
                         src={dev2} 
                         alt="about me portfolio picture" 
-                        className='w-full h-auto rounded-2xl' />
+                        className='w-full h-auto rounded-2xl'
+                        priority
+                        sizes= "(max-width:768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                         <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light'/>
                     </div>
 
@@ -98,13 +100,10 @@ const about = () => {
                 </Layout>
 
                 <Education />
-                <Experience />
+
                 <Skills/>
                 
-
-                
             </main>
-            
         </>
     )
 }
