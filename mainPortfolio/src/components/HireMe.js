@@ -8,7 +8,7 @@ const HireMe = () => {
         <div className='fixed flex items-center justify-center overflow-hidden 
         left-2 bottom-20 
         xl:left-auto xl:right-5 xl:top-20 xl:bottom-auto xl:pt-10
-        lg:bottom-auto lg:top-20 lg:absolute lg:pt-10
+        lg:bottom-0 lg:top-auto lg:absolute lg:pt-10
         md:left-4 md:right-auto md:bottom-20 md:top-auto 
         sm:hidden
         '>

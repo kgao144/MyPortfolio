@@ -5,19 +5,19 @@ import LiIcon from './LiIcon'
 const Details = ({position, company, companyLink, time, address, work}) => {
     const ref = useRef(null);
     return (
-        <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between'>
+        <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between lg:w-[90%]'>
             <LiIcon reference={ref}/>
             <motion.div
             initial={{y:50}}
             whileInView={{y:0}}
             translation={{duration:0.6, type:"spring"}}>
-                <h3 className='capitalize font-bold text-2xl dark:text-light'>
+                <h3 className='capitalize font-bold text-2xl dark:text-light sm:text-lg'>
                     {position}&nbsp;<a href={companyLink} target="_blank" className='text-[#005bb1] dark:text-[#64dbff] capitalize'>@ {company}</a>
                 </h3>
-                <span className='capitalize font-medium text-dark/75 dark:text-light/75'>
+                <span className='capitalize font-medium text-dark/75 dark:text-light/75 sm:text-sm'>
                     {time} | {address}
                 </span>
-                <p className='font-medium w-full dark:text-light'>
+                <p className='font-medium w-full dark:text-light sm:text-md '>
                     {work}
                 </p>
             </motion.div>
@@ -37,16 +37,16 @@ const Experience = () => {
 
     return (
         <div className='bg-light dark:bg-dark'>
-            <h2 className='font-bold text-8xl my-8 w-full text-center dark:text-light'>Experience</h2>
+            <h2 className='font-bold text-8xl my-8 w-full text-center dark:text-light md:text-6xl md:mt-10 lg:text-7xl sm:text-4xl xs:mb-0'>Experience</h2>
         
             <div ref={ref} className='w-[65%] mx-auto relative'>
 
                 <motion.div 
                     style = {{scaleY: scrollYProgress}}
-                    className = 'absolute left-9 top-0 w-[4px] h-full bg-dark dark:bg-light origin-top '/>
+                    className = 'absolute left-9 top-0 w-[4px] h-full bg-dark dark:bg-light origin-top lg:-left-11'/>
                     
                 
-                <ul className='w-full flex flex-col my-10 items-start justify-between ml-4'>
+                <ul className='w-full flex flex-col my-10 items-start justify-between ml-4 xs:my-5 lg:ml-0 lg:my-5'>
                     <Details
                     position="Job Title"
                     company="Company Name"
@@ -57,7 +57,7 @@ const Experience = () => {
                     />
                 </ul>
 
-                <ul className='w-full flex flex-col my-10 items-start justify-between ml-4'>
+                <ul className='w-full flex flex-col my-10 items-start justify-between ml-4 xs:my-5 lg:ml-0 lg:my-5'>
                     <Details
                     position="Cashier / Server"
                     company="Southern Crab House"
@@ -68,7 +68,7 @@ const Experience = () => {
                     />
                 </ul>
 
-                <ul className='w-full flex flex-col my-10 items-start justify-between ml-4'>
+                <ul className='w-full flex flex-col my-10 items-start justify-between ml-4 xs:my-5 lg:ml-0 lg:my-5'>
                     <Details
                     position="Cashier / Server"
                     company="Linda's Seafood Market"

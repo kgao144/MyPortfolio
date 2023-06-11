@@ -5,14 +5,18 @@ import {SiNextdotjs} from 'react-icons/si';
 
 const Footer = () => {
     return (
-        <footer className='w-full bg-light border-t border-solid border-dark dark:border-light dark:bg-dark font-medium text-lg shadow-inner'>
-            <Layout className='py-8 flex items-center justify-between'>
+        <footer className='w-full font-medium text-lg shadow-inner
+        border-t border-solid border-dark dark:border-light
+        bg-light dark:bg-dark 
+        sm:text-base
+        xs:text-sm'>
+            <Layout className='py-8 flex items-center justify-between lg:flex-col lg:py-6 xl:py-7 xs:flex-col md:py-5 sm:py-4 xs:py-4'>
                 <span className='dark:text-light'> 
                     {new Date().getFullYear()} &copy; 
                     All Rights Reserved.
                 </span>
                 
-                <div className='flex items-center dark:text-light'>
+                <div className='flex items-center dark:text-light lg:py-2'>
                     <Link href="https://nextjs.org/">
                         Built With
                     </Link>
