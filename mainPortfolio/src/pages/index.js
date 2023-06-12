@@ -19,7 +19,7 @@ export default function Home() {
       </Head>
       <TransitionEffect />
       <main className='flex items-center bg-light dark:bg-dark dark:border-dark dark:text-light w-full min-h-screen'>
-        <Layout className='pt-0 md:pt-16 sm:pt-8'>
+        <Layout className='pt-0 md:pt-12 sm:pt-8 xs:pt-0'>
         
 
           <div className="flex items-center justify-center w-full lg:flex-col">
@@ -33,7 +33,7 @@ export default function Home() {
                 Feel free to explore my portfolio and check out my resume. 
                 <br></br>
                 <br></br>
-                If you're curious of the pictures on the portfolio were made using a Stable Diffusion image generation model!
+                If you're curious about the pictures on the portfolio, they were made using a Stable Diffusion image generation model!
               </p>
               
               <div className='flex items-center self-start mt-2 lg:self-center'>

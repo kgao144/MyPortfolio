@@ -11,6 +11,13 @@
 }
 */
 
+.modal {
+    background-color: red;
+    backdrop-filter: blur('8px');
+}
+
+
+
 .rounded {
     border-radius: 20% 30% / 60% 40%
 }

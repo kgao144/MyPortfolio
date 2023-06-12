@@ -1,16 +1,31 @@
 import React from 'react'
 import Head from 'next/head'
-import Layout from '@/components/Layout'
-import AnimatedText from '@/components/AnimatedText'
 import Link from 'next/link'
 import Image from 'next/image'
 import {motion} from 'framer-motion'
-import { GithubIcon, FramerMotionIcon, NextJSIcon, TailwindIcon, GlowGithub} from '@/components/Icons'
-import portfolio from '../../public/images/projects/portfoliomain.png'
-import eliza from '../../public/images/projects/eliza.png'
-import placeholder from '../../public/images/projects/placeholder.png'
-import ueplane from '../../public/images/projects/ueplane.png'
+import Layout from '@/components/Layout'
+import AnimatedText from '@/components/AnimatedText'
 import TransitionEffect from '@/components/TransitionEffect'
+import ProjectModals from '@/components/ProjectModals'
+import { GithubIcon, GlowGithub} from '@/components/Icons'
+
+import portfolio from '../../public/images/projects/portfoliomain.png'
+import ElizaMain from '../../public/images/projects/eliza.png'
+import Placeholder from '../../public/images/projects/placeholder.png'
+import Ueplane from '../../public/images/projects/ueplane.png'
+import basicMATLAB from '../../public/images/projects/basicMATLABModel.png'
+import simulinkModel from '../../public/images/projects/basicSimulinkModel.png'
+import basicSimulink from '../../public/images/projects/simulinkSender.png'
+import UDPReceiverBlueprint from '../../public/images/projects/UDPReceiverBlueprint.png'
+import port1 from '../../public/images/projects/port1.png'
+import port2 from '../../public/images/projects/port2.png'
+import port3 from '../../public/images/projects/port3.png'
+import port4 from '../../public/images/projects/port4.png'
+import port5 from '../../public/images/projects/port5.png'
+
+
+
+
 
 const FramerImage = motion(Image);
 
@@ -67,7 +82,7 @@ const FeaturedProject = ({type, title, summary, img, link, github}) => {
     )
 }
 
-const Project = ({type, title, img, link, github}) => {
+const Project = ({type, title, img, link, github, img1, img2, img3, img4, desc, time}) => {
     return (
         <article className='w-full h-[90%] flex flex-col item-end justify-center 
         rounded-2xl border border-solid border-dark bg-light dark:border-light dark:bg-dark p-6 relative
@@ -76,7 +91,7 @@ const Project = ({type, title, img, link, github}) => {
             <div className='absolute top-0 -right-3 -z-10 w-[99%] h-[103%] rounded-[2rem] bg-dark dark:bg-light rounded-br-3xl
             xs:rounded-[1.5rem]'/>
 
-            <Link href={link} target="_blank" className='w-full h-[75%] cursor-pointer overflow-hidden rounded-3xl'>
+            <div className='w-full h-[75%] cursor-pointer overflow-hidden rounded-3xl'>
                 <FramerImage 
                 src={img} 
                 alt={title} 
@@ -85,22 +100,28 @@ const Project = ({type, title, img, link, github}) => {
                 transition={{duration:0.2}}
                 priority
                 sizes= "(max-width:768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
-            </Link>
+            </div>
 
             <div className='w-full flex flex-col items-start justify-between mt-4 md:mt-2'>
                 <span className='text-blue-700 dark:text-[#64dbff] font-semibold text-xl lg:text-lg md:text-sm mt-3'>{type}</span>
-                <Link href={link} target="_blank" className='hover:underline underline-offset-2 dark:text-light'>
-                    <h2 className='mt-4 w-full text-left text-3xl font-bold dark:text-light lg:text-2xl md:text-xl md:mt-2'>{title}</h2>
-                </Link>
                 
-                <div className='w-full flex items-center mt-5 justify-between dark:text-light'>
-                    <Link href={link} target="_blank" className='pr-6 text-lg font-semibold lg:text-md md:text-sm'>
-                        View
-                    </Link>
+                
+                <div className='w-full grid grid-cols-12 items-center justify-between dark:text-light'>
+
+                    <h2 className='col-span-12 my-4 flex w-full text-left text-3xl font-bold dark:text-light lg:text-2xl md:text-xl md:mt-2'>{title}</h2>
+                    <div className='col-span-6 flex '>
+                        <ProjectModals 
+                        title2={title} type2={type} desc2={desc} time2={time}
+                        img12={img1} img22={img2} img32={img3} img42={img4} 
+                        />
+                    </div>
                     
-                    <Link href={github} target="_blank" className='w-8'>
-                        <GithubIcon />
-                    </Link>
+                    <div className='col-span-6 flex items-end justify-end'>
+                        <Link href={github} target="_blank" className='w-8'>
+                            <GithubIcon />
+                        </Link>
+                    </div>
+                    
                 </div>
             </div>
         </article>
@@ -117,8 +138,8 @@ const projects = () => {
         <main className='w-full mb-16 flex flex-col items-center justify-center dark:bg-[#2c2c2c] lg:mb-8 xl:mb-12 2xl:mb-14'>
         <TransitionEffect />
         <AnimatedText text="Projects and Endeavors!" className='my-3 
-        2xl:pl-10 xs:pl-0 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl xs:mx-5'/>
-            <Layout className='pt-16 xs:pt-6 lg:pt-8 xl:pt-12 2xl:pt-12'>
+        2xl:pl-10 xs:pl-0 lg:!text-7xl sm:mb-3 sm:!text-6xl xs:!text-4xl xs:mx-5'/>
+            <Layout className='pt-16 sm:pt-6 lg:pt-8 xl:pt-12 2xl:pt-12'>
                 
                 <div className='grid grid-col-12 gap-24 xl:gap-x-16 lg:gap-x-8 md:gap-y-12 sm:gap-x-0'>
                     <div className='col-span-12 mb-20'>
@@ -134,45 +155,75 @@ const projects = () => {
 
                     <div className='col-span-4 xl:col-span-6 sm:col-span-12'>
                         <Project 
-                        title="Online Portfolio"
                         img={portfolio}
-                        link="/"
+                        link="/projects"
                         github="https://github.com/kgao144/MyPortfolio"
+
+                        title="Online Portfolio"
                         type="Web Application"
+                        desc=
+                        "The framework & tools used in the creation of this project were Next.js, TailwindCSS, Framer-Motion, as well as other React elements. The goal for this project was to gain familiarity with building simple web applications all while learning from documentation of new tools. NextJS was chosen as the framework because of the ease of deployment with server-rendering capabilities as well as the accessibility to TailwindCSS to obtain visible features fast. Framer-motion was also used to gain more visually pleasing animations for individual components on the portfolio."
+                        time='June 2023'
+                        img1={port3}
+                        img2={port4}
+                        img3={port5}
+                        img4={port1}
                         />
                     </div>
 
                     <div className='col-span-4 xl:col-span-6 sm:col-span-12'>
                         <Project 
-                        title="Capstone Project: Digital Twin"
-                        img={ueplane}
-                        link="/"
+                        img={Ueplane}
+                        link="/projects"
                         github="/"
-                        type="Research & Develop: Simulink & Unreal Engine 5 Communication"
+                        title="Digital Twin Project"
+                        type="Capstone: Research & Develop"
+                        desc=
+                        "In my Computer Science Capstone course we were formed into teams based on our interests and strengths and then were paired with clients to develop or assist in their needs. The goal set for my team was to research and attempt communication between Simulink and Unreal Engine 5 in the preliminary stages of the digital twin project. Prior to this project the main source of communication between the two was through a Mathworks plugin with Unreal Engine 4, but the plugin became outdated when Unreal Engine 5 updated. I was the team lead of four members that acted as a point of communication between my team, professor, and the client. As team lead I was able to lead the team in an AGILE environment where I would host & attend team, class, and virtual standup meetings with the client. My role on the project focused on documentation, creating MATLAB & Simulink models and scripts, and cleaning up Unreal Engine scripts."
+                        time='Jan 2023 - April 2023'
+                        img1={basicSimulink}
+                        img2={simulinkModel}
+                        img3={basicMATLAB}
+                        img4={UDPReceiverBlueprint}
                         />
                     </div>
                     
                     <div className='col-span-4 xl:col-span-6 sm:col-span-12'>
                         <Project 
-                        title="Modified Eliza Chatbot"
-                        img={eliza}
+                        img={ElizaMain}
                         link="/"
                         github="https://github.com/kgao144/CSCI-4322---Term-Project"
+
+                        title="Modified Eliza Chatbot"
                         type="Python Application"
+                        desc="sample description"
+                        time='March 2023 - April 2023'
+                        img1={Placeholder}
+                        img2={Placeholder}
+                        img3={Placeholder}
+                        img4={Placeholder}
                         />
                     </div>
 
                     <div className='col-span-4 xl:col-span-6 sm:col-span-12'>
                         <Project 
-                        title="My Next Project!"
-                        img={placeholder}
+                        img={Placeholder}
                         link="/projects"
                         github="/"
+
+                        title="My Next Project!"
                         type="Future Project"
+                        desc="Sample Description"
+                        time='Present - '
+                        img1={Placeholder}
+                        img2={Placeholder}
+                        img3={Placeholder}
+                        img4={Placeholder}
                         />
                     </div>
 
                 </div>
+                
                 
             </Layout>
         </main>

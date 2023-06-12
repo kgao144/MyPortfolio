@@ -6,7 +6,7 @@ import Link from 'next/link'
 const HireMe = () => {
     return (
         <div className='fixed flex items-center justify-center overflow-hidden 
-        left-2 bottom-20 
+        left-2 bottom-[100px] 
         xl:left-auto xl:right-5 xl:top-20 xl:bottom-auto xl:pt-10
         lg:bottom-0 lg:top-auto lg:absolute lg:pt-10
         md:left-4 md:right-auto md:bottom-20 md:top-auto 
