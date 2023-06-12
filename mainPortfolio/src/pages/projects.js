@@ -17,11 +17,16 @@ import basicMATLAB from '../../public/images/projects/basicMATLABModel.png'
 import simulinkModel from '../../public/images/projects/basicSimulinkModel.png'
 import basicSimulink from '../../public/images/projects/simulinkSender.png'
 import UDPReceiverBlueprint from '../../public/images/projects/UDPReceiverBlueprint.png'
-import port1 from '../../public/images/projects/port1.png'
-import port2 from '../../public/images/projects/port2.png'
-import port3 from '../../public/images/projects/port3.png'
-import port4 from '../../public/images/projects/port4.png'
-import port5 from '../../public/images/projects/port5.png'
+import eshow1 from '../../public/images/projects/eshow1.png'
+import eshow2 from '../../public/images/projects/eshow2.png'
+import eshow3 from '../../public/images/projects/eshow3.png'
+import eshow4 from '../../public/images/projects/eshow4.png'
+
+import pshow1 from '../../public/images/projects/pshow1.png'
+import pshow2 from '../../public/images/projects/pshow2.png'
+import pshow3 from '../../public/images/projects/pshow3.png'
+import pshow4 from '../../public/images/projects/pshow4.png'
+
 
 
 
@@ -142,7 +147,7 @@ const projects = () => {
             <Layout className='pt-16 sm:pt-6 lg:pt-8 xl:pt-12 2xl:pt-12'>
                 
                 <div className='grid grid-col-12 gap-24 xl:gap-x-16 lg:gap-x-8 md:gap-y-12 sm:gap-x-0'>
-                    <div className='col-span-12 mb-20'>
+                    <div className='col-span-12 mb-20 xl:mb-10'>
                         <FeaturedProject 
                         title="Online Portfolio"
                         img={portfolio}
@@ -164,10 +169,10 @@ const projects = () => {
                         desc=
                         "The framework & tools used in the creation of this project were Next.js, TailwindCSS, Framer-Motion, as well as other React elements. The goal for this project was to gain familiarity with building simple web applications all while learning from documentation of new tools. NextJS was chosen as the framework because of the ease of deployment with server-rendering capabilities as well as the accessibility to TailwindCSS to obtain visible features fast. Framer-motion was also used to gain more visually pleasing animations for individual components on the portfolio."
                         time='June 2023'
-                        img1={port3}
-                        img2={port4}
-                        img3={port5}
-                        img4={port1}
+                        img1={pshow1}
+                        img2={pshow2}
+                        img3={pshow3}
+                        img4={pshow4}
                         />
                     </div>
 
@@ -179,7 +184,7 @@ const projects = () => {
                         title="Digital Twin Project"
                         type="Capstone: Research & Develop"
                         desc=
-                        "In my Computer Science Capstone course we were formed into teams based on our interests and strengths and then were paired with clients to develop or assist in their needs. The goal set for my team was to research and attempt communication between Simulink and Unreal Engine 5 in the preliminary stages of the digital twin project. Prior to this project the main source of communication between the two was through a Mathworks plugin with Unreal Engine 4, but the plugin became outdated when Unreal Engine 5 updated. I was the team lead of four members that acted as a point of communication between my team, professor, and the client. As team lead I was able to lead the team in an AGILE environment where I would host & attend team, class, and virtual standup meetings with the client. My role on the project focused on documentation, creating MATLAB & Simulink models and scripts, and cleaning up Unreal Engine scripts."
+                        "The goal set for my team was to research and attempt communication between Simulink and Unreal Engine 5 in the preliminary stages of the digital twin project for our client. Prior to this project the main source of communication between the two was through a Mathworks plugin with Unreal Engine 4, but the plugin became outdated when Unreal Engine 5 updated. I was the team lead of four members and acted as a point of communication between my team, professor, and the client. As team lead I was able to guide the team in an AGILE environment where I would host & attend team, class, and virtual standup meetings with the professor and client. My role on the project focused on managing our documentation & Github, creating MATLAB & Simulink models and scripts, and cleaning up Unreal Engine scripts."
                         time='Jan 2023 - April 2023'
                         img1={basicSimulink}
                         img2={simulinkModel}
@@ -196,12 +201,12 @@ const projects = () => {
 
                         title="Modified Eliza Chatbot"
                         type="Python Application"
-                        desc="sample description"
+                        desc="This project was made as a final assignment for my Software Development course. We formed teams in which were assigned to improve upon or modify the Eliza chatbot program. The stated Eliza chatbot is a program that is used to demonstrate human-computer interaction originaly through a terminal. So in order to enhance the original program my team chose to modify and add a portion of the programs responses as well as creating a user interface in the form of a .exe file using Tkinter."
                         time='March 2023 - April 2023'
-                        img1={Placeholder}
-                        img2={Placeholder}
-                        img3={Placeholder}
-                        img4={Placeholder}
+                        img1={eshow1}       
+                        img2={eshow2}
+                        img3={eshow3}
+                        img4={eshow4}
                         />
                     </div>
 

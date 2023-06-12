@@ -12,16 +12,19 @@ const ProjectModals = ({title2, type2, desc2, img12, img22, img32, img42, time2}
         overlay: {
             backgroundColor: 'rgba(0, 0, 0, 0.5)',
             backdropFilter: 'blur(12px)',
+            
         },
         content: {
-            top: '50%',
-            left: '50%',
+            top: '20%',
+            left: '20%',
             width: '60vw', 
             height: '70vh',
             right: 'auto',
             bottom: 'auto',
-            transform: 'translate(-50%, -50%)',
+            
             backgroundColor: 'rgba(231, 233, 237, 1)',
+            borderRadius: '4px',
+            overflow: 'auto',
             
         },
     }
@@ -42,11 +45,13 @@ const ProjectModals = ({title2, type2, desc2, img12, img22, img32, img42, time2}
 
                 <motion.button onClick={() => setIsOpen(false)} 
                 whileHover={{scale:1.2}}
-                transition={{duration:0.1}}
-                className='absolute top-1.5 left-1.5 border-2 rounded-md px-[6px]  font-bold
+                transition={{duration:0.2}}
+                className='absolute top-1.5 left-1.5 border-2 rounded-md px-[6px] font-bold
+                lg:px-[5px] md:px-[4px] lg:text-sm lg:font-semibold lg:top-[5px] lg:left-[5px]
+                sm:text-xs sm:px-[3px] md:border-[1px]
                 bg-light dark:bg-dark hover:bg-dark dark:hover:bg-light
                 text-dark dark:text-light hover:text-light dark:hover:text-dark
-                border-dark dark:border-light hover:border-light dark:hover:border-dark'>
+                border-dark/30 dark:border-light/70 hover:border-light/70 dark:hover:border-dark/30'>
                     X
                 </motion.button>
             </Modal>
