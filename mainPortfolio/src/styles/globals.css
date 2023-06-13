@@ -7,7 +7,7 @@
 
 
 * {
-    border: 1px solid rgb(17, 136, 130)
+    border: 1px solid rgb(9, 184, 175)
 }
 */
 
@@ -17,48 +17,15 @@
 }
 
 
-
-.rounded {
-    border-radius: 20% 30% / 60% 40%
+.backdrop {
+    background-color: rgba(0,0,0,0.2);
+    backdrop-filter: blur(11px);
 }
 
-.ring {
-    --uib-size: 40px;
-    --uib-speed: 2s;
-    --uib-color: black;
-    
-    height: var(--uib-size);
-    width: var(--uib-size);
-    vertical-align: middle;
-    transform-origin: center;
-    animation: rotate var(--uib-speed) linear infinite;
+.container {
+    filter: blur(5px);
 }
 
-.ring circle {
-    fill: none;
-    stroke: var(--uib-color);
-    stroke-dasharray: 1, 200;
-    stroke-dashoffset: 0;
-    stroke-linecap: round;
-    animation: stretch calc(var(--uib-speed) * 0.75) ease-in-out infinite;
-}
-
-@keyframes rotate {
-    100% {
-    transform: rotate(360deg);
-    }
-}
-
-@keyframes stretch {
-    0% {
-    stroke-dasharray: 1, 200;
-    stroke-dashoffset: 0;
-    }
-    50% {
-    stroke-dasharray: 90, 200;
-    stroke-dashoffset: -35px;
-    }
-    100% {
-    stroke-dashoffset: -124px;
-    }
+.backdrop-filter {
+    backdrop-filter: blur(11px);
 }

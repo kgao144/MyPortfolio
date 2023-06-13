@@ -81,7 +81,7 @@ const NavBar = () => {
                     <motion.a href="https://www.linkedin.com/in/kevingao144/" target= {"_blank"}
                     whileHover = {{y:-5}}
                     whileTap= {{scale:0.5}}
-                    className = "w-11 h-11 mx-2 border-[3px] border-dark text-white dark:bg-light dark:text-dark rounded-full"
+                    className = "w-11 h-11 mx-2 border-[3px] bg-light border-dark text-white dark:bg-light dark:text-dark rounded-full"
                     >
                         <div className='-translate-x-[4px] -translate-y-[1px]'>
                             <RoundLinkedIn />

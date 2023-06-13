@@ -8,6 +8,7 @@ import AnimatedText from '@/components/AnimatedText'
 import TransitionEffect from '@/components/TransitionEffect'
 import ProjectModals from '@/components/ProjectModals'
 import { GithubIcon, GlowGithub} from '@/components/Icons'
+import {BsPerson, BsPeople} from 'react-icons/bs'
 
 import portfolio from '../../public/images/projects/portfoliomain.png'
 import ElizaMain from '../../public/images/projects/eliza.png'
@@ -26,7 +27,6 @@ import pshow1 from '../../public/images/projects/pshow1.png'
 import pshow2 from '../../public/images/projects/pshow2.png'
 import pshow3 from '../../public/images/projects/pshow3.png'
 import pshow4 from '../../public/images/projects/pshow4.png'
-
 
 
 
@@ -56,7 +56,7 @@ const FeaturedProject = ({type, title, summary, img, link, github}) => {
             </Link>
 
             <div className='w-1/2 flex flex-col items-start justify-between pl-6 py-3 lg:w-full lg:pl-3 lg:pt-6'>
-                <span className='text-blue-700 dark:text-[#64dbff] font-semibold text-xl xs:text-base sm:text-lg'>{type}</span>
+                <span className='text-blue-700 dark:text-[#1BFFCB] font-bold text-xl xs:text-base sm:text-lg'>{type}</span>
                 <Link href={link} target="_blank" className='hover:underline underline-offset-2 dark:text-light'>
                     <h2 className='my-2 w-full text-left text-4xl font-bold dark:text-light sm:text-2xl lg:text-3xl'>{title}</h2>
                 </Link>
@@ -87,7 +87,9 @@ const FeaturedProject = ({type, title, summary, img, link, github}) => {
     )
 }
 
-const Project = ({type, title, img, link, github, img1, img2, img3, img4, desc, time}) => {
+const Project = ({type, title, img, link, github, img1, img2, img3, img4, desc, time, groups}) => {
+
+    
     return (
         <article className='w-full h-[90%] flex flex-col item-end justify-center 
         rounded-2xl border border-solid border-dark bg-light dark:border-light dark:bg-dark p-6 relative
@@ -108,20 +110,22 @@ const Project = ({type, title, img, link, github, img1, img2, img3, img4, desc, 
             </div>
 
             <div className='w-full flex flex-col items-start justify-between mt-4 md:mt-2'>
-                <span className='text-blue-700 dark:text-[#64dbff] font-semibold text-xl lg:text-lg md:text-sm mt-3'>{type}</span>
+                <span className='text-blue-700 dark:text-[#1BFFCB] font-semibold text-xl lg:text-lg md:text-sm mt-3'>{type}</span>
                 
                 
                 <div className='w-full grid grid-cols-12 items-center justify-between dark:text-light'>
 
                     <h2 className='col-span-12 my-4 flex w-full text-left text-3xl font-bold dark:text-light lg:text-2xl md:text-xl md:mt-2'>{title}</h2>
-                    <div className='col-span-6 flex '>
+                    <div className='col-span-6 flex backdrop-filter'>
                         <ProjectModals 
                         title2={title} type2={type} desc2={desc} time2={time}
                         img12={img1} img22={img2} img32={img3} img42={img4} 
                         />
                     </div>
-                    
-                    <div className='col-span-6 flex items-end justify-end'>
+                    <div className='col-span-4 flex items-end justify-end h-full'>
+                        {groups === 1 ? <BsPerson className='w-[30px] h-auto'/> : <BsPeople className='w-[30px] h-auto'/> }
+                    </div>
+                    <div className='col-span-2 flex items-center justify-end'>
                         <Link href={github} target="_blank" className='w-8'>
                             <GithubIcon />
                         </Link>
@@ -173,6 +177,7 @@ const projects = () => {
                         img2={pshow2}
                         img3={pshow3}
                         img4={pshow4}
+                        groups={1}
                         />
                     </div>
 
@@ -190,6 +195,7 @@ const projects = () => {
                         img2={simulinkModel}
                         img3={basicMATLAB}
                         img4={UDPReceiverBlueprint}
+                        groups={2}
                         />
                     </div>
                     
@@ -207,6 +213,7 @@ const projects = () => {
                         img2={eshow2}
                         img3={eshow3}
                         img4={eshow4}
+                        groups={2}
                         />
                     </div>
 
@@ -224,6 +231,7 @@ const projects = () => {
                         img2={Placeholder}
                         img3={Placeholder}
                         img4={Placeholder}
+                        groups={1}
                         />
                     </div>
 

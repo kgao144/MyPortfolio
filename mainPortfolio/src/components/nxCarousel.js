@@ -12,13 +12,14 @@ export default class nxCarousel extends Component {
 
         return (
             <div className='p-4 xl:p-3 md:p-2 sm:p-0'>
-                <div className='grid grid-cols-2 mb-4 border-2 border-dark/15 rounded-lg bg-dark/10'>
-                    <h1 className='col-span-2 text-4xl flex flex-col items-center justify-center font-bold 
-                    2xl:text-3xl lg:text-2xl md:text-xl sm:text-lg
+                <div className='grid grid-cols-2 mb-4 border-2 border-dark/15 rounded-lg bg-dark/10 '>
+                    <h1 className='col-span-1 text-4xl flex flex-col items-center justify-center font-bold 
+                    2xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-light
                     '>
                         {title3}
                     </h1>
-                    <div className='col-span-2 text-xl flex flex-col items-center justify-center text-blue-700 font-semibold 
+
+                    <div className='col-span-1 text-xl flex flex-col items-center justify-center text-[#1BFFCB] font-semibold 
                     2xl:text-lg lg:text-base md:text-sm sm:text-xs
                     '>
                         {type3}
@@ -59,17 +60,17 @@ export default class nxCarousel extends Component {
                 <div className='border-2 rounded-xl mt-4 bg-dark/10'>
                     <div className='grid grid-cols-12 border-2 border-dark/15 rounded-lg'>
                         <h2 className='col-span-6 flex flex-row items-center justify-start mx-5 my-2 text-2xl font-medium
-                        2xl:text-xl lg:text-lg md:text-base sm:text-sm md:col-span-12
+                        2xl:text-xl lg:text-lg md:text-base sm:text-sm md:col-span-12 text-light
                         '>
                             Project Description
                         </h2>
                         <h2 className='col-span-6 flex flex-row items-center justify-end mx-5 text-xl font-semibold
-                        2xl:text-lg lg:text-base md:text-sm sm:text-xs md:col-span-12 md:justify-start
+                        2xl:text-lg lg:text-base md:text-sm sm:text-xs md:col-span-12 md:justify-start text-light
                         '>
                             {time3}
                         </h2>
-                        <div className='col-span-12 flex flex-row items-start justify-start mx-3 mb-3 text-xl
-                        bg-white border-2 border-dark/20 rounded-lg p-2
+                        <div className='col-span-12 flex flex-row items-start justify-start mx-2 mb-2 text-xl
+                        bg-light border border-dark/15 rounded-lg p-2 text-dark
                         2xl:text-lg lg:text-base md:text-sm sm:text-xs md:col-span-12
                         '>
                             {desc3}
